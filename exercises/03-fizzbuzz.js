@@ -9,3 +9,23 @@
 // Examples:
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
+
+function fizzbuzz (inputNumber) {
+    var fizzbuzzArray = []
+    for(var i = 1; i <= inputNumber; i++){
+        if ( (i % 3 > 0) && (i % 5 > 0)){
+            fizzbuzzArray.push('.')
+        }else if ( (i % 3 == 0) && (i % 5 > 0)) {
+            fizzbuzzArray.push('fizz') 
+        }else if ( (i % 3 > 0) && (i % 5 == 0)) {
+            fizzbuzzArray.push('buzz')
+        }else if ( (i % 3 == 0) && (i % 5 == 0)) {
+            fizzbuzzArray.push('fizzbuzz')
+        }
+    }    
+    
+    var fizzbuzzString = fizzbuzzArray.join('')
+    return fizzbuzzString
+}
+
+console.log(fizzbuzz(15))
